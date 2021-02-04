@@ -1,0 +1,19 @@
+// 🚫 Do not use these variables 🚫
+// The following variables are to be used in the creation of OTHER variables only,
+// and should not be referenced not outside of this partial
+$spacing-baseline: 8px;
+
+$spacing-unit-factor-xxs: 0.75; // 6px
+$spacing-unit-factor-xs: 1; // 8px
+$spacing-unit-factor-sm: 2; // 16px
+$spacing-unit-factor: 4; // 32px
+$spacing-unit-factor-lg: 6; // 48px
+$spacing-unit-factor-xl: 10; // 80px
+
+// 🎉 Use the following variables anywhere within Lux 🎉
+$spacing-unit: $spacing-baseline * $spacing-unit-factor;
+$spacing-unit-xxs: $spacing-baseline * $spacing-unit-factor-xxs;
+$spacing-unit-xs: $spacing-baseline * $spacing-unit-factor-xs;
+$spacing-unit-sm: $spacing-baseline * $spacing-unit-factor-sm;
+$spacing-unit-lg: $spacing-baseline * $spacing-unit-factor-lg;
+$spacing-unit-xl: $spacing-baseline * $spacing-unit-factor-xl;
