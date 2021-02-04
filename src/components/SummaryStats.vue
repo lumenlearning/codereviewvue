@@ -4,13 +4,26 @@
     <h3 class="u-margin-top-none u-margin-bottom-sm">Your Score</h3>
     <h4 class="u-margin-top-none u-margin-bottom-lg u-margin-left">{{ getScore }}</h4>
     <span class="meta meta--duration">Time Spent: {{ formattedDuration }}</span>
+    <SvgIconContainer width="24" height="24" icon-name="Success" aria-hidden>
+      <IconCheckmark />
+    </SvgIconContainer>
+    <span class="grade-details is-graded">
+      Score recorded as grade
+    </span>
     <span class="meta meta--time">Finished: {{ formattedDate }}</span>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import SvgIconContainer from './SvgIconContainer.vue';
+import IconCheckmark from './icons/IconCheckmark.vue';
+
 export default {
+  components: {
+    SvgIconContainer,
+    IconCheckmark,
+  },
   props: {
     data: {
       type: Object,
@@ -69,7 +82,9 @@ h3 {
     weight: 400;
   }
 }
- 
+svg {
+  color: $color-salem;
+}
 .meta {
   font: {
     size: $text-size-down-1;
