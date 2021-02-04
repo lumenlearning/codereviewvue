@@ -59,7 +59,7 @@ As a student user, I want to easily understand my quiz score, including the grad
 - A large score bar provides a visual representation of the percentage of questions answered correctly in this quiz attempt.
   - The score bar provides meaningful information to screen reader users.
 - Student users can see the date and time they submitted the quiz and the time they spent on the quiz.
-- If this quiz attempt (students have a minimum of 2 attempts per quiz) represents a students highest score, the student sees the text "Score recorded as grade" and an icon is displayed; otherwise, no info is displayed.
+- If this quiz attempt (students have a minimum of 2 attempts per quiz) represents a student's highest score, the student sees the text "Score recorded as grade" and an icon is displayed; otherwise, no message or icon is displayed.
 - The look of the summary in the browser approximates the provided comp.
 
 ## About this repo
