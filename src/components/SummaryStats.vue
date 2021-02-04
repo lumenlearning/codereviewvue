@@ -72,8 +72,15 @@ h2 {
   }
 }
 .summary {
+  align-items: center;
   border: $border-style;
   border-radius: 4px;
+  display: grid;
+  grid-template-areas:
+    'title title title title'
+    'progressBar stats icon grade'
+    'durationMeta . . timeMeta';
+  grid-template-columns: 1fr 80px 28px 1fr;
   width: 96%;
 }
 h3 {
@@ -81,9 +88,16 @@ h3 {
     size: $text-size-up-1;
     weight: 400;
   }
+  grid-area: title;
+}
+.grade-details {
+  font-size: $text-size-up-1;
 }
 svg {
   color: $color-salem;
+}
+.is-graded {
+  grid-area: grade;
 }
 .meta {
   font: {
@@ -91,5 +105,11 @@ svg {
     weight: 400;
   }
   margin-top: $spacing-unit-xs;
+  &--duration {
+    grid-area: durationMeta;
+  }
+  &--time {
+    grid-area: timeMeta;
+  }
 }
 </style>
