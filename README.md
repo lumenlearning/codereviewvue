@@ -8,7 +8,7 @@ We're interested in how you respond to code at both a technical level and a team
 
 1. Read this complete README, which provides details about this exercise and repo.
 1. Navigate to the open pull request within this repo and look over the PR description and the code changes being put forth.
-1. Using the [provided code review template](./REVIEW_TEMPLATE.md), please record your thoughtful response on how to improve the code, what you believe is particularly praiseworthy in the code, and any advice which you would offer or questions you woudl ask of your teammate submitting this pull request.
+1. Using the [provided code review template](./REVIEW_TEMPLATE.md), please record your thoughtful response on how to improve the code, what you believe is particularly praiseworthy in the code, and any advice which you would offer or questions you would ask of your teammate submitting this pull request.
 1. The template includes instructions on how to format and submit your code.
 
 ### Advice
