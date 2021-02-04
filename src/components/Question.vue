@@ -1,6 +1,11 @@
 <template>
   <section class="u-margin-bottom-sm">
     <div class="question-container">
+      <header class="u-padding-sm" :class="isCorrect ? 'is-correct' : 'is-incorrect'">
+        <h3 class="u-margin-none">
+          <span class="u-sr-only">Question X of Y: </span>{{ isCorrect ? 'Correct' : 'Incorrect' }}
+        </h3>
+      </header>
       <fieldset class="u-margin-none u-padding-sm">
         <legend class="u-block u-padding-top-sm">{{ questionData.title }}</legend>
         <label
@@ -24,6 +29,14 @@ export default {
       required: true,
     },
   },
+  computed: {
+    isCorrect() {
+      const scoreCorrect = this.questionData.answers.filter(
+        (item) => item.score === 100 && item.selected === true,
+      );
+      return scoreCorrect.length === 1;
+    },
+  },
 };
 </script>
 
@@ -31,8 +44,21 @@ export default {
 section {
   border: 1px solid $color-loblolly;
   border-radius: 4px;
-  display: flex;
+  // display: flex;
   overflow: hidden;
+}
+header {
+  &.is-correct {
+    background-color: $color-peppermint;
+    color: $color-jewel;
+  }
+  &.is-incorrect {
+    background-color: $color-chablis;
+    color: $color-apple-blossom;
+  }
+}
+h3 {
+  font-size: $text-size-base;
 }
 fieldset {
   border: 0;
