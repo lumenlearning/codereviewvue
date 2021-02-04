@@ -18,7 +18,15 @@ const state = () => ({
 });
 
 // getters
-const getters = {};
+type Getters = {
+  quizTitle(state: QuizStateInterface): Quiz['title'];
+};
+
+const getters: GetterTree<QuizStateInterface, StateInterface> & Getters = {
+  quizTitle(state) {
+    return state.quizData.title;
+  },
+};
 
 // actions
 const actions = {};
