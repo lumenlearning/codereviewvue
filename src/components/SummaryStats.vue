@@ -2,7 +2,10 @@
   <h2>Summary</h2>
   <div class="summary u-padding-horizontal-sm u-padding-vertical u-margin-bottom-lg">
     <h3 class="u-margin-top-none u-margin-bottom-sm">Your Score</h3>
-    <h4 class="u-margin-top-none u-margin-bottom-lg u-margin-left">{{ getScore }}</h4>
+    <ProgressBar :value="getScore" label="quiz-score" />
+    <span id="quiz-score" class="grade-details progress-bar-label u-margin-left-xs">{{
+      displayScoreAsPercent
+    }}</span>
     <span class="meta meta--duration">Time Spent: {{ formattedDuration }}</span>
     <SvgIconContainer width="24" height="24" icon-name="Success" aria-hidden>
       <IconCheckmark />
@@ -18,11 +21,12 @@
 import { mapGetters } from 'vuex';
 import SvgIconContainer from './SvgIconContainer.vue';
 import IconCheckmark from './icons/IconCheckmark.vue';
-
+import ProgressBar from './ProgressBar';
 export default {
   components: {
     SvgIconContainer,
     IconCheckmark,
+    ProgressBar,
   },
   props: {
     data: {
@@ -37,6 +41,9 @@ export default {
       countCorrect: 'quiz/countCorrect',
       getScore: 'quiz/calcScore',
     }),
+    displayScoreAsPercent() {
+      return this.getScore + '%';
+    },
     formattedDuration() {
       const durationArray = this.data.timeSpent.split(':');
       const duration = [];
@@ -92,6 +99,9 @@ h3 {
 }
 .grade-details {
   font-size: $text-size-up-1;
+}
+.progress-bar-label {
+  letter-spacing: 1px;
 }
 svg {
   color: $color-salem;
