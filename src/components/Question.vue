@@ -18,6 +18,12 @@
         </label>
       </fieldset>
     </div>
+    <div class="sidebar u-padding-sm">
+      <h4 class="sidebar-text u-margin-none">Section</h4>
+      <p class="sidebar-text u-margin-bottom">{{ getSkills[0].title }}</p>
+      <h4 class="sidebar-text u-margin-none">Skill</h4>
+      <p class="sidebar-text">{{ getSkills[0].description }}</p>
+    </div>
   </section>
 </template>
 
@@ -28,6 +34,10 @@ export default {
       type: Object,
       required: true,
     },
+    skills: {
+      type: Array,
+      required: true,
+    },
   },
   computed: {
     isCorrect() {
@@ -36,15 +46,20 @@ export default {
       );
       return scoreCorrect.length === 1;
     },
+    getSkills() {
+      return this.skills.filter((item) => item.uuid === this.questionData.skill);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+$border-style: 1px solid $color-loblolly;
+$sidebar-width: 240px;
 section {
-  border: 1px solid $color-loblolly;
+  border: $border-style;
   border-radius: 4px;
-  // display: flex;
+  display: flex;
   overflow: hidden;
 }
 header {
@@ -70,5 +85,19 @@ label {
 input[type='radio'] {
   position: relative;
   top: 2px; // offset line-height of label text
+}
+.question-container {
+  width: calc(100% - #{$sidebar-width});
+}
+.sidebar {
+  background-color: $color-concrete;
+  border-left: $border-style;
+  width: $sidebar-width;
+  h4 {
+    color: $color-pale-sky;
+  }
+  &-text {
+    font-size: $text-size-down-1;
+  }
 }
 </style>
