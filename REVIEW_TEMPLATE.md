@@ -31,4 +31,4 @@ L18: Wow! We're using Vue3? 🎉
 
 - Did you feel you were missing any context for this PR? What other info might have helped you understand the context for this feature?
 
-<!-- When your review and response is complete, please email to angelique@lumenlearning.com -->
+<!-- When your review and response is complete, please email to james@lumenlearning.com -->
