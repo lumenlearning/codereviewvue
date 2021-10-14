@@ -23,7 +23,7 @@ type Getters = {
   listQuestions(state: QuizStateInterface): Quiz['questions'];
   countQuestions(state: QuizStateInterface): number;
   countCorrect(state: QuizStateInterface): number;
-  calcScore(state: QuizStateInterface): string;
+  calcScore(state: QuizStateInterface): number;
 };
 
 const getters: GetterTree<QuizStateInterface, StateInterface> & Getters = {
@@ -53,7 +53,7 @@ const getters: GetterTree<QuizStateInterface, StateInterface> & Getters = {
     const totalQ = getters.countQuestions(state);
     const correctQ = getters.countCorrect(state);
     const score = (correctQ / totalQ) * 100;
-    return Math.floor(score) + '%';
+    return Math.floor(score);
   },
 };
 
